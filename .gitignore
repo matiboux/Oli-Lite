@@ -1,0 +1,6 @@
+# Oli Files
+/.olipath
+
+# Website Config Files
+# /config.php
+/app.json
