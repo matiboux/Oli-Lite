@@ -973,7 +973,7 @@ class OliLite {
 		 * @deprecated Directly accessible with OliLite::$config
 		 * @return array Returns the settings tables.
 		 */
-		public function getSettingsTables() { return $this->config['settings_tables']; }
+		public function getSettingsTables() { return $this->config['settings_tables'] ?: ['settings']; }
 		
 		/**
 		 * Get Setting
@@ -984,9 +984,9 @@ class OliLite {
 		 */
 		public function getSetting($setting, $depth = 0) {
 			$isExist = [];
-			if($this->isSetupMySQL() AND !empty($this->config['settings_tables'])) {
-				
-				foreach(($depth > 0 AND count($this->config['settings_tables']) > $depth) ? array_slice($this->config['settings_tables'], $depth) : $this->config['settings_tables'] as $eachTable) {
+			if($this->isSetupMySQL()) {
+				$tables = $this->config['settings_tables'] ?: ['settings'];
+				foreach(($depth > 0 AND count($tables) > $depth) ? array_slice($tables, $depth) : $tables as $eachTable) {
 					if($this->isExistTableMySQL($eachTable)) {
 						$isExist[] = true;
 						if(isset($setting)) {
