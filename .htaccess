@@ -1,0 +1,18 @@
+DirectoryIndex index.php
+ErrorDocument 404 /oli-lite/index.php
+ErrorDocument 403 /oli-lite/index.php
+
+Order deny,allow
+<FilesMatch "load.php">
+	deny from all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteBase /oli-lite/
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+Options -Indexes
