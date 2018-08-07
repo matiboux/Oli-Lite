@@ -24,6 +24,8 @@ Do not specify the protocol (HTTP/HTTPS) for the url value.
 
 If you choose to use a mysql database, import the default sql file and update the value from the "settings" table.
 
+If you need to configure additional stuff, or if you'd like a global code applying to all your website, you can create a *config.php* file. This file will be automatically included during loading.
+
 ## Help & Support
 
 Having trouble? Need some help with something?  
