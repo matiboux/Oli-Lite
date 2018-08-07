@@ -14,6 +14,16 @@ You can also get involved and contribute, if you'd like to! You're more than wel
 [Download the latest release](https://github.com/OliFramework/Oli/releases/latest) and extract the files in your web server with PHP installed.  
 Create your website pages in the *content/* folder and check them appear live on your website!
 
+### Configuration
+
+To ensure your website works properly, and to benefit from the settings management feature, either create an *app.json* file in your directory or use a mysql database.
+
+If you choose to create the *app.json* file, copy this in the file and edit the values.  
+`{"url":"urwebs.it\/","name":"Your website","description":"","creation_date":"","owner":""}`  
+Do not specify the protocol (HTTP/HTTPS) for the url value.
+
+If you choose to use a mysql database, import the default sql file and update the value from the "settings" table.
+
 ## Help & Support
 
 Having trouble? Need some help with something?  
@@ -23,7 +33,7 @@ Having trouble? Need some help with something?
 
 ## License (MIT)
 
-Copyright (c) 2018 Matiboux (Mathieu Guérin)
+Copyright (c) 2018 Matiboux (Mathieu Guérin)  
 *You'll find a copy of the MIT license in the **LICENSE** file.*
 
 ---
