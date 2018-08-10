@@ -896,8 +896,7 @@ class OliLite {
 							break;
 						
 						/** User Assets */
-						// } else
-						if($fileNameParam == ($this->config['assets_folder'] ?: 'assets')) {
+						} else if($fileNameParam == ($this->config['assets_folder'] ?: 'assets')) {
 							$accessAllowed = false; // 403 Forbidden
 							break;
 						
