@@ -1,8 +1,8 @@
 <?php
 /*\
 |*|  ---------------------------------
-|*|  --- [    Oli Lite     ] ---
-|*|  --- [  Version 1.0.0  ] ---
+|*|  --- [       Oli Lite       ] ---
+|*|  --- [  Version BETA 1.0.0  ] ---
 |*|  ---------------------------------
 |*|  
 |*|  Oli Lite is a PHP framework with MySQL integration and URL management tools
@@ -32,7 +32,7 @@
 |*|  
 |*|  Project created on August 7, 2018.
 |*|  Releases:
-|*|   * 1.0.0: [WIP]
+|*|   * BETA 1.0.0: [WIP]
 \*/
 
 /*\
@@ -129,8 +129,8 @@ class OliLite {
 	/**
 	 * OliLite Class Contruct function
 	 * 
-	 * @version 1.0.0
-	 * @updated 1.0.0
+	 * @version BETA-1.0.0
+	 * @updated BETA-1.0.0
 	 * @return void
 	 */
 	public function __construct($initTimestamp = null) {
@@ -141,6 +141,8 @@ class OliLite {
 		
 		/** User Content constants */
 		if(!defined('ASSETSPATH')) define('ASSETSPATH', CONTENTPATH . 'assets/');
+		if(!defined('SCRIPTSPATH')) define('SCRIPTSPATH', CONTENTPATH . 'script/');
+		if(!defined('THEMEPATH')) define('THEMEPATH', CONTENTPATH . 'theme/');
 		
 		/** Framework Init */
 		$this->initTimestamp = $initTimestamp ?: microtime(true);
@@ -150,8 +152,8 @@ class OliLite {
 	/**
 	 * OliLite Class Destruct function
 	 * 
-	 * @version 1.0.0
-	 * @updated 1.0.0
+	 * @version BETA-1.0.0
+	 * @updated BETA-1.0.0
 	 * @return void
 	 */
 	public function __destruct() {
@@ -161,8 +163,8 @@ class OliLite {
 	/**
 	 * OliLite Class Read-only variables management
 	 * 
-	 * @version 1.0.0
-	 * @updated 1.0.0
+	 * @version BETA-1.0.0
+	 * @updated BETA-1.0.0
 	 * @return mixed Returns the requested variable value if is allowed to read, null otherwise.
 	 */
 	public function __get($whatVar) {
@@ -176,8 +178,8 @@ class OliLite {
 	 * OliLite Class Is Set variables management
 	 * This fix the empty() false negative issue on inaccessible variables.
 	 * 
-	 * @version 1.0.0
-	 * @updated 1.0.0
+	 * @version BETA-1.0.0
+	 * @updated BETA-1.0.0
 	 * @return mixed Returns true if the requested variable isn't empty and if is allowed to read, null otherwise.
 	 */
     public function __isset($whatVar) {
@@ -188,8 +190,8 @@ class OliLite {
 	/**
 	 * OliLite Class to String function
 	 * 
-	 * @version 1.0.0
-	 * @updated 1.0.0
+	 * @version BETA-1.0.0
+	 * @updated BETA-1.0.0
 	 * @return string Returns a short description of Oli.
 	 */
 	public function __toString() {
@@ -209,8 +211,8 @@ class OliLite {
 		/**
 		 * Get Oli Infos
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return string Returns a short description of Oli.
 		 * @return string Returns Oli Infos.
 		 */
@@ -256,8 +258,8 @@ class OliLite {
 		/**
 		 * Get App Config
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return mixed Array or requested value.
 		 */
 		public function getAppConfig($index = null, $reload = false) {
@@ -278,8 +280,8 @@ class OliLite {
 		/**
 		 * MySQL Connection Setup
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return boolean Returns true if succeeded.
 		 */
 		public function setupMySQL($database, $username = null, $password = null, $hostname = null, $charset = null) {
@@ -296,8 +298,8 @@ class OliLite {
 		/**
 		 * MySQL Connection Reset
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return boolean Returns true if succeeded.
 		 */
 		public function resetMySQL() {
@@ -353,8 +355,8 @@ class OliLite {
 		/**
 		 * Is setup MySQL connection
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return boolean Returns the MySQL connection status
 		 */
 		public function isSetupMySQL() {
@@ -368,8 +370,8 @@ class OliLite {
 		/**
 		 * Run a raw MySQL Query
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return array|boolean Returns the query result content or true if succeeded.
 		 */
 		public function runQueryMySQL($query, $fetchStyle = true) {
@@ -387,8 +389,8 @@ class OliLite {
 		/**
 		 * Get data from MySQL
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return array|boolean|void Returns data from the requested table if succeeded.
 		 */
 		public function getDataMySQL($table, ...$params) {
@@ -420,8 +422,8 @@ class OliLite {
 		/**
 		 * Get first info from table
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return array|null Returns first info from specified table.
 		 */
 		public function getFirstInfoMySQL($table, $whatVar = null, $sortBy = null, $rawResult = false) {
@@ -439,8 +441,8 @@ class OliLite {
 		/**
 		 * Get first line from table
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @related OliLite::getFirstInfoMySQL()
 		 * @return array|null Returns first line from specified table.
 		 */
@@ -451,8 +453,8 @@ class OliLite {
 		/**
 		 * Get first info from table
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return array|null Returns last info from specified table.
 		 */
 		public function getLastInfoMySQL($table, $whatVar, $rawResult = false) {
@@ -470,8 +472,8 @@ class OliLite {
 		/**
 		 * Get last line from table
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @related OliLite::getLastInfoMySQL()
 		 * @return array|null Returns last line from specified table.
 		 */
@@ -482,8 +484,8 @@ class OliLite {
 		/**
 		 * Get infos from table
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return array|null Returns infos from specified table.
 		 */
 		public function getInfosMySQL($table, $whatVar = null, $where = null, $settings = null, $caseSensitive = null, $forceArray = null, $rawResult = null) {
@@ -548,8 +550,8 @@ class OliLite {
 		/**
 		 * Get lines from table
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @related OliLite::getInfosMySQL()
 		 * @return array|null Returns lines from specified table.
 		 */
@@ -560,8 +562,8 @@ class OliLite {
 		/**
 		 * Get summed infos from table
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @related OliLite::getInfosMySQL()
 		 * @return numeric|boolean|null Returns summed infos if numeric values are found, false otherwise. Returns null if no MySQL infos is found.
 		 */
@@ -582,8 +584,8 @@ class OliLite {
 		/**
 		 * Is exist infos in table
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @related OliLite::getInfosMySQL()
 		 * @return integer|boolean Returns the number of infos found, false if none found.
 		 */
@@ -595,8 +597,8 @@ class OliLite {
 		/**
 		 * Is empty infos in table
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @related OliLite::getInfosMySQL()
 		 * @return array|null Returns true if infos are empty, false otherwise.
 		 */
@@ -670,8 +672,8 @@ class OliLite {
 		/**
 		 * Delete lines from a table
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return boolean Returns true if the request succeeded, false otherwise.
 		 */
 		public function deleteLinesMySQL($table, $where) {
@@ -724,8 +726,8 @@ class OliLite {
 			/**
 			 * Is Exist MySQL Table
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return boolean Returns true if it exists.
 			 */
 			public function isExistTableMySQL($table) {
@@ -867,8 +869,8 @@ class OliLite {
 		/**
 		 * Load page content
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return string|void Returns the path to the file to include.
 		 */
 		public function loadContent(array $params = null) {
@@ -887,11 +889,11 @@ class OliLite {
 						$fileNameParam = implode('/', $fileName);
 						
 						/** User Scripts */
-						// if(file_exists(SCRIPTSPATH . $fileNameParam)) {
-							// $found = SCRIPTSPATH . $fileNameParam;
-							// $this->fileNameParam = $fileNameParam;
-							// $this->setContentType('JSON');
-							// break;
+						if(file_exists(SCRIPTSPATH . $fileNameParam)) {
+							$found = SCRIPTSPATH . $fileNameParam;
+							$this->fileNameParam = $fileNameParam;
+							$this->setContentType('JSON');
+							break;
 						
 						/** User Assets */
 						// } else
@@ -902,21 +904,21 @@ class OliLite {
 						/** User Pages */
 						} else {
 							/** Custom Page */
-							if(file_exists(CONTENTPATH . $fileNameParam . '.php')) {
-								$found = CONTENTPATH . $fileNameParam . '.php';
+							if(file_exists(THEMEPATH . $fileNameParam . '.php')) {
+								$found = THEMEPATH . $fileNameParam . '.php';
 								$this->fileNameParam = $fileNameParam;
 							
 							/** Home Page */
-							} else if($fileNameParam == 'home' AND file_exists(CONTENTPATH . 'index.php')) {
-								$found = CONTENTPATH . 'index.php';
+							} else if($fileNameParam == 'home' AND file_exists(THEMEPATH . 'index.php')) {
+								$found = THEMEPATH . 'index.php';
 								$contentStatus = 'index';
 							}
 							
 							/** Search for sub-directory */
-							if(!file_exists(CONTENTPATH . $fileNameParam . '/')) break; // No more to search.
+							if(!file_exists(THEMEPATH . $fileNameParam . '/')) break; // No more to search.
 							else {
-								if(file_exists(CONTENTPATH . $fileNameParam . '/index.php')) {
-									$found = CONTENTPATH . $fileNameParam . '/index.php';
+								if(file_exists(THEMEPATH . $fileNameParam . '/index.php')) {
+									$found = THEMEPATH . $fileNameParam . '/index.php';
 									$this->fileNameParam = $fileNameParam;
 								}
 								continue; // There may be another level.
@@ -938,7 +940,7 @@ class OliLite {
 				http_response_code(403); // 403 Forbidden
 				$this->contentStatus = '403';
 				
-				if(file_exists(CONTENTPATH . '403.php')) return CONTENTPATH . '403.php';
+				if(file_exists(THEMEPATH . '403.php')) return THEMEPATH . '403.php';
 				else die('Error 403: Access forbidden');
 			
 			/** Page not found / 404 Not Found */
@@ -946,7 +948,7 @@ class OliLite {
 				http_response_code(404); // 404 Not Found
 				$this->contentStatus = '404';
 				
-				if(file_exists(CONTENTPATH . '404.php')) return CONTENTPATH . '404.php';
+				if(file_exists(THEMEPATH . '404.php')) return THEMEPATH . '404.php';
 				else die('Error 404: File not found');
 			}
 		}
@@ -954,8 +956,8 @@ class OliLite {
 		/**
 		 * Get content status
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @deprecated OliLite::$contentStatus variable should be read instead.
 		 * @return string|void Returns the path to the file to include.
 		 */
@@ -968,8 +970,8 @@ class OliLite {
 		/**
 		 * Get Settings Tables
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @deprecated Directly accessible with OliLite::$config
 		 * @return array Returns the settings tables.
 		 */
@@ -978,8 +980,8 @@ class OliLite {
 		/**
 		 * Get Setting
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return string|boolean Returns the requested setting if succeeded.
 		 */
 		public function getSetting($setting, $depth = 0) {
@@ -1011,8 +1013,8 @@ class OliLite {
 		/**
 		 * Get Shortcut Link
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return boolean Returns true if succeeded.
 		 */
 		public function getShortcutLink($shortcut, $caseSensitive = false) {
@@ -1031,8 +1033,8 @@ class OliLite {
 			/**
 			 * Set Content Type
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return boolean Returns new content type if succeeded.
 			 */
 			public function setContentType($contentType = null, $charset = null, $force = false) {
@@ -1067,8 +1069,8 @@ class OliLite {
 			/**
 			 * Reset Content Type
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return boolean Returns new content type if succeeded.
 			 */
 			public function resetContentType() { return $this->setContentType(); }
@@ -1076,8 +1078,8 @@ class OliLite {
 			/**
 			 * Get Content Type
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return boolean Returns current content type.
 			 */
 			public function getContentType() { return $this->contentType; }
@@ -1085,8 +1087,8 @@ class OliLite {
 			/**
 			 * Get Charset
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return boolean Returns current charset.
 			 */
 			public function getCharset() { return $this->charset; }
@@ -1102,8 +1104,8 @@ class OliLite {
 				/**
 				 * Get Cookie value
 				 * 
-				 * @version 1.0.0
-				 * @updated 1.0.0
+				 * @version BETA-1.0.0
+				 * @updated BETA-1.0.0
 				 * @return boolean Returns cookie value.
 				 */
 				public function getCookie($name, $rawResult = false) {
@@ -1113,8 +1115,8 @@ class OliLite {
 				/**
 				 * Get Cookie raw value
 				 * 
-				 * @version 1.0.0
-				 * @updated 1.0.0
+				 * @version BETA-1.0.0
+				 * @updated BETA-1.0.0
 				 * @return boolean Returns cookie raw value.
 				 */
 				public function getRawCookie($name) {
@@ -1124,8 +1126,8 @@ class OliLite {
 				/**
 				 * Is Exist Cookie
 				 * 
-				 * @version 1.0.0
-				 * @updated 1.0.0
+				 * @version BETA-1.0.0
+				 * @updated BETA-1.0.0
 				 * @return boolean Returns true if the cookie exists.
 				 */
 				public function isExistCookie($name) {
@@ -1135,8 +1137,8 @@ class OliLite {
 				/**
 				 * Is Empty Cookie
 				 * 
-				 * @version 1.0.0
-				 * @updated 1.0.0
+				 * @version BETA-1.0.0
+				 * @updated BETA-1.0.0
 				 * @return boolean Returns true if the cookie is empty.
 				 */
 				public function isEmptyCookie($name) {
@@ -1150,8 +1152,8 @@ class OliLite {
 				/**
 				 * Set Cookie
 				 * 
-				 * @version 1.0.0
-				 * @updated 1.0.0
+				 * @version BETA-1.0.0
+				 * @updated BETA-1.0.0
 				 * @return boolean Returns true if succeeded.
 				 */
 				public function setCookie($name, $value, $expireDelay, $path, $domains, $secure = false, $httpOnly = false) {
@@ -1169,8 +1171,8 @@ class OliLite {
 				/**
 				 * Delete Cookie
 				 * 
-				 * @version 1.0.0
-				 * @updated 1.0.0
+				 * @version BETA-1.0.0
+				 * @updated BETA-1.0.0
 				 * @return boolean Returns true if succeeded.
 				 */
 				public function deleteCookie($name, $path, $domains, $secure = false, $httpOnly = false) {
@@ -1192,8 +1194,8 @@ class OliLite {
 			/**
 			 * Get default mail headers
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return array Returns the default mail headers.
 			 */
 			public function getDefaultMailHeaders($toString = false) {
@@ -1219,8 +1221,8 @@ class OliLite {
 			/**
 			 * Load CSS Stylesheet
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return void
 			 */
 			public function loadStyle($url, $tags = null, $loadNow = null, $minimize = null) {
@@ -1242,8 +1244,8 @@ class OliLite {
 			/**
 			 * Load Local CSS Stylesheet
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return void
 			 */
 			public function loadLocalStyle($url, $tags = null, $loadNow = null, $minimize = null) {
@@ -1253,8 +1255,8 @@ class OliLite {
 			/**
 			 * Load CDN CSS Stylesheet
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return void
 			 */
 			public function loadCdnStyle($url, $tags = null, $loadNow = null, $minimize = null) {
@@ -1264,8 +1266,8 @@ class OliLite {
 			/**
 			 * Load JS Script
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return void
 			 */
 			public function loadScript($url, $tags = null, $loadNow = null, $minimize = null) {
@@ -1287,8 +1289,8 @@ class OliLite {
 			/**
 			 * Load Local JS Script
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return void
 			 */
 			public function loadLocalScript($url, $tags = null, $loadNow = null, $minimize = null) {
@@ -1298,8 +1300,8 @@ class OliLite {
 			/**
 			 * Load CDN JS Script
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return void
 			 */
 			public function loadCdnScript($url, $tags = null, $loadNow = null, $minimize = null) {
@@ -1311,8 +1313,8 @@ class OliLite {
 			 * 
 			 * Force the loader list files to load
 			 * 
-			 * @version 1.0.0
-			 * @updated 1.0.0
+			 * @version BETA-1.0.0
+			 * @updated BETA-1.0.0
 			 * @return void
 			 */
 			public function loadEndHtmlFiles() {
@@ -1386,8 +1388,8 @@ class OliLite {
 		 * - 'get' => Get $_GET
 		 * - 'getvars' => Get raw GET vars
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return string|void Returns requested url param if succeeded.
 		 */
 		public function getUrlParam($param = null, &$hasUsedHttpHostBase = false) {
@@ -1497,8 +1499,8 @@ class OliLite {
 		/**
 		 * Get Full Url
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return string|void Returns the assets url.
 		 */
 		public function getFullUrl() { return $this->getUrlParam('full'); }
@@ -1506,8 +1508,8 @@ class OliLite {
 		/**
 		 * Get Content Url
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return string|void Returns the content url.
 		 */
 		public function getContentUrl() {
@@ -1517,8 +1519,8 @@ class OliLite {
 		/**
 		 * Get Assets Url
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return string|void Returns the assets url.
 		 */
 		public function getAssetsUrl() {
@@ -1528,8 +1530,8 @@ class OliLite {
 		/**
 		 * Get CDN Url
 		 * 
-		 * @version 1.0.0
-		 * @updated 1.0.0
+		 * @version BETA-1.0.0
+		 * @updated BETA-1.0.0
 		 * @return string|void Returns the CDN url.
 		 */
 		public function getCdnUrl() { return $this->config['cdn_url']; }
@@ -1551,8 +1553,8 @@ class OliLite {
 				 * 
 				 * From https://stackoverflow.com/a/15875555/5255556
 				 * 
-				 * @version 1.0.0
-				 * @updated 1.0.0
+				 * @version BETA-1.0.0
+				 * @updated BETA-1.0.0
 				 * @return string Returns the generated UUID.
 				 */
 				public function uuid4() {
