@@ -4,14 +4,14 @@
 The framework includes various secondary tools for website development.
 
 This project is a lite version of **Oli**. This main project includes also accounts management, addons support, and more!
-Check it out on the [Oli Github Repository](https://github.com/OliFramework/Oli/).
+Check it out on the [Oli Github Repository](https://github.com/matiboux/Oli/).
 
 If you like any of the two projects, or are interested in it, please consider giving some feedback, and leaving a star! ★  
 You can also get involved and contribute, if you'd like to! You're more than welcome to do so!
 
 ## Get started!
 
-[Download the latest release](https://github.com/OliFramework/Oli/releases/latest) and extract the files in your web server with PHP installed.  
+[Download the latest release](https://github.com/matiboux/Oli/releases/latest) and extract the files in your web server with PHP installed.  
 Create your website pages in the *content/* folder and check them appear live on your website!
 
 ### Configuration
@@ -29,7 +29,7 @@ If you need to configure additional stuff, or if you'd like a global code applyi
 ## Help & Support
 
 Having trouble? Need some help with something?  
-[Open a new issue](https://github.com/OliFramework/Oli/issues/new), or check out the ["Team" section](#team) to contact us.
+[Open a new issue](https://github.com/matiboux/Oli/issues/new), or check out the ["Team" section](#team) to contact us.
 
 ---
 
@@ -50,7 +50,7 @@ Want to get in touch with me? Here's how:
  
 ### Contributors
 
-See who also [contributed to this project](https://github.com/OliFramework/Oli/blob/master/CONTRIBUTORS.md)!
+See who also [contributed to this project](https://github.com/matiboux/Oli/blob/master/CONTRIBUTORS.md)!
 
 ### Thanks credits
 
