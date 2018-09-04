@@ -7,10 +7,10 @@
 |*|  
 |*|  Oli Lite is a PHP framework with MySQL integration and URL management tools
 |*|  Oli Lite is an open-source project! Check it out on Github:
-|*|    https://github.com/OliFramework/Oli-Lite/
+|*|    https://github.com/matiboux/Oli-Lite/
 |*|  
 |*|  Oli Lite is a simplified version of Oli, check it out on Github:
-|*|    https://github.com/OliFramework/Oli/
+|*|    https://github.com/matiboux/Oli/
 |*|  
 |*|  Creator & Developer: Matiboux (Mathieu Guérin)
 |*|   → Github: @matiboux – https://github.com/matiboux/
@@ -20,7 +20,7 @@
 |*|  
 |*|  For more info, please read the README.md file.
 |*|  You can find it in the root directory or the project repository:
-|*|    https://github.com/OliFramework/Oli-Lite/
+|*|    https://github.com/matiboux/Oli-Lite/
 |*|  
 |*|  --- --- ---
 |*|  

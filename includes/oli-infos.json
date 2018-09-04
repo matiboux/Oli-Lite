@@ -6,11 +6,11 @@
 	"plan": "lite",
 	"version": "1.0.0",
 	
-	"url": "https://github.com/OliFramework/Oli-Lite/",
+	"url": "https://github.com/matiboux/Oli-Lite/",
 	"repository": {
 		"service": "Github",
-		"url": "https://github.com/OliFramework/Oli-Lite/",
-		"api": "https://api.github.com/repos/OliFramework/Oli-Lite"
+		"url": "https://github.com/matiboux/Oli-Lite/",
+		"api": "https://api.github.com/repos/matiboux/Oli-Lite"
 	},
 	
 	"team": [
